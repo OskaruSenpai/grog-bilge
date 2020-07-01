@@ -1,0 +1,9 @@
+a = blue_pentagon
+b = darkblue_rectangle
+c = green_square
+d = green octagon
+e = lightblue octagon
+f = lightblue sphere
+g = teal sphere
+
+
