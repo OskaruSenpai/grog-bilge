@@ -69,7 +69,8 @@ def bfs(initial, depth):
 
             visited.add(node_tuple)
 
-            if depth != 0 and evaluate_combo(node) == 0:  # and visited[node_tuple] is None:
+            # and visited[node_tuple] is None:
+            if depth != 0 and evaluate_combo(node) == 0:
                 for child in elementswap_getchildren(node):
                     queue.append(child)
                     i += 1
@@ -95,4 +96,4 @@ if __name__ == "__main__":
     end = time.time()
 
     print('Visited', len(results), 'positions')
-    print('This took', end - start, 'seconds')
+    print('This took', round(end - start, 2), 'seconds')

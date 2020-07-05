@@ -18,12 +18,14 @@ crab = np.array(['m']).reshape(1, 1)
 jelly = np.array(['j']).reshape(1, 1)
 puffer = np.array(['p']).reshape(1, 1)
 
+images_location = "image_assets\\"
+
 special_pieces = [crab, jelly, puffer]
 
 #### 1 color patterns ####
 
 ### 1x3 ###
-onetimesthree = np.array(['x','?','x','x']).reshape(1, 4)
+onetimesthree = np.array(['x', '?', 'x', 'x']).reshape(1, 4)
 
 ### 3x1 ###
 threetimesone_1a = np.array(['?', 'x', 'x', '?', 'x', '?']).reshape(3, 2)
@@ -31,126 +33,163 @@ threetimesone_1a = np.array(['?', 'x', 'x', '?', 'x', '?']).reshape(3, 2)
 threetimesone_1b = np.array(['?', 'x', 'x', '?', '?', 'x']).reshape(3, 2)
 
 ### 4x1 (Good) ###
-fourtimesone = np.array(['x','?','x','x','?','x','?','?']).reshape(2, 4).T
+fourtimesone = np.array(
+    ['x', '?', 'x', 'x', '?', 'x', '?', '?']).reshape(2, 4).T
 
 ### 5x1 (Great) ###
-fivetimesone = np.array(['x','x','?','x','x','?','?','x','?','?']).reshape(2, 5).T
+fivetimesone = np.array(['x', 'x', '?', 'x', 'x', '?',
+                         '?', 'x', '?', '?']).reshape(2, 5).T
 
 ### 3x3 (Arrr!) ###
-threetimesthree_1a = np.array(['x','?','x','x','?','x','?','?','?','x','?','?']).reshape(3, 4)
+threetimesthree_1a = np.array(
+    ['x', '?', 'x', 'x', '?', 'x', '?', '?', '?', 'x', '?', '?']).reshape(3, 4)
 
-threetimesthree_1b = np.array(['?','x','?','?','x','?','x','x','?','x','?','?']).reshape(3, 4)
+threetimesthree_1b = np.array(
+    ['?', 'x', '?', '?', 'x', '?', 'x', 'x', '?', 'x', '?', '?']).reshape(3, 4)
 
 ### 3x4 (Arrr!) ###
-threetimesfour = np.array(['?','x','?','?','x','?','x','x','?','x','?','?','?','x','?','?']).reshape(4, 4)
+threetimesfour = np.array(['?', 'x', '?', '?', 'x', '?', 'x',
+                           'x', '?', 'x', '?', '?', '?', 'x', '?', '?']).reshape(4, 4)
 
 ### Ax5 (Yarrr!) ###
 
 ## 3x5 (Yarrr!) ##
-threetimesfive = np.array(['?','x','?','?','?','x','?','?','x','?','x','x','?','x','?','?','?','x','?','?']).reshape(5, 4)
+threetimesfive = np.array(['?', 'x', '?', '?', '?', 'x', '?', '?', 'x',
+                           '?', 'x', 'x', '?', 'x', '?', '?', '?', 'x', '?', '?']).reshape(5, 4)
 
 onecolor_patterns_basic = [onetimesthree, threetimesone_1a, threetimesone_1b]
 
 #### 2 color patterns ####
 
 ### 3x3 (Arrr!) ###
-threetimesthree_2a = np.array(['x','y','x','y','y','x']).reshape(3, 2)
+threetimesthree_2a = np.array(['x', 'y', 'x', 'y', 'y', 'x']).reshape(3, 2)
 
-threetimesthree_2b = np.array(['x','y','y','x','x','y']).reshape(3, 2)
+threetimesthree_2b = np.array(['x', 'y', 'y', 'x', 'x', 'y']).reshape(3, 2)
 
-threetimesthree_2c = np.array(['x','x','y','x','y','y']).reshape(1, 6)
+threetimesthree_2c = np.array(['x', 'x', 'y', 'x', 'y', 'y']).reshape(1, 6)
 
-threetimesthree_2d = np.array(['x','?','x','y','y','x','?','y']).reshape(4, 2)
+threetimesthree_2d = np.array(
+    ['x', '?', 'x', 'y', 'y', 'x', '?', 'y']).reshape(4, 2)
 
-threetimesthree_2e = np.array(['x','?','x','?','y','x','?','y','?','y']).reshape(5, 2)
+threetimesthree_2e = np.array(
+    ['x', '?', 'x', '?', 'y', 'x', '?', 'y', '?', 'y']).reshape(5, 2)
 
 ### 3x4 (Arrr!) ###
-threetimesfour_2 = np.array(['x','?','?','?','x','?','?','?','y','x','y','y','x','?','?','?']).reshape(4, 4)
+threetimesfour_2 = np.array(['x', '?', '?', '?', 'x', '?', '?',
+                             '?', 'y', 'x', 'y', 'y', 'x', '?', '?', '?']).reshape(4, 4)
 
 ### 4x4 (Har!) ###
-fourtimesfour_2 = np.array(['x','y','x','y','y','x','x','y']).reshape(4, 2)
+fourtimesfour_2 = np.array(
+    ['x', 'y', 'x', 'y', 'y', 'x', 'x', 'y']).reshape(4, 2)
 
 ### Ax5 (Yarrr!) ###
 
 ## 3x5 (Yarrr!) ##
-threetimesfive_2 = np.array(['x','?','?','?','x','?','?','?','y','x','y','y','x','?','?','?','x','?','?','?']).reshape(5, 4)
+threetimesfive_2 = np.array(['x', '?', '?', '?', 'x', '?', '?', '?', 'y',
+                             'x', 'y', 'y', 'x', '?', '?', '?', 'x', '?', '?', '?']).reshape(5, 4)
 
 ## 4x5 (Yarrr!) ##
-fourtimesfive_2 = np.array(['x','?','x','y','y','x','x','y','x','y']).reshape(5, 2)
+fourtimesfive_2 = np.array(
+    ['x', '?', 'x', 'y', 'y', 'x', 'x', 'y', 'x', 'y']).reshape(5, 2)
 
 ## 5x5 (Yarrr!) ##
-fivetimesfive_2 = np.array(['x','y','x','y','y','x','x','y','x','y']).reshape(5, 2)
+fivetimesfive_2 = np.array(
+    ['x', 'y', 'x', 'y', 'y', 'x', 'x', 'y', 'x', 'y']).reshape(5, 2)
 
 twocolor_patterns_basic = [threetimesthree_2a, threetimesthree_2b, threetimesthree_2c, threetimesthree_2d,
-                     threetimesthree_2e]
+                           threetimesthree_2e]
 
 ### AxBxC (Bingo) ###
 
 ## 3x3x3 (Bingo) ##
-threecubed_a = np.array(['x','y','?','?','x','y','?','?','y','x','y','y']).reshape(3, 4)
+threecubed_a = np.array(['x', 'y', '?', '?', 'x', 'y',
+                         '?', '?', 'y', 'x', 'y', 'y']).reshape(3, 4)
 
-threecubed_b = np.array(['x','y','?','?','y','x','y','y','x','y','?','?']).reshape(3, 4)
+threecubed_b = np.array(['x', 'y', '?', '?', 'y', 'x',
+                         'y', 'y', 'x', 'y', '?', '?']).reshape(3, 4)
 
 ## 3x3x4 (Bingo) ##
-threesquaredfour_a = np.array(['x','y','?','?','x','y','?','?','y','x','y','y','?','y','?','?']).reshape(4, 4)
+threesquaredfour_a = np.array(['x', 'y', '?', '?', 'x', 'y', '?',
+                               '?', 'y', 'x', 'y', 'y', '?', 'y', '?', '?']).reshape(4, 4)
 
-threesquaredfour_b = np.array(['x','y','?','?','x','y','?','?','y','x','y','y','x','?','?','?']).reshape(4, 4)
+threesquaredfour_b = np.array(['x', 'y', '?', '?', 'x', 'y', '?',
+                               '?', 'y', 'x', 'y', 'y', 'x', '?', '?', '?']).reshape(4, 4)
 
 ## 3x4x4 (Bingo) ##
-threefoursquared = np.array(['x','y','?','?','x','y','?','?','y','x','y','y','x','y','?','?']).reshape(4, 4)
+threefoursquared = np.array(['x', 'y', '?', '?', 'x', 'y', '?',
+                             '?', 'y', 'x', 'y', 'y', 'x', 'y', '?', '?']).reshape(4, 4)
 
 ## 3x3x5 (Bingo) ##
-threesquaredfive_a = np.array(['x','y','?','?','x','y','?','?','y','x','y','y','?','y','?','?','?','y','?','?']).reshape(5, 4)
+threesquaredfive_a = np.array(['x', 'y', '?', '?', 'x', 'y', '?', '?', 'y',
+                               'x', 'y', 'y', '?', 'y', '?', '?', '?', 'y', '?', '?']).reshape(5, 4)
 
-threesquaredfive_b = np.array(['x','y','?','?','x','y','?','?','y','x','y','y','x','?','?','?','x','?','?','?']).reshape(5, 4)
+threesquaredfive_b = np.array(['x', 'y', '?', '?', 'x', 'y', '?', '?', 'y',
+                               'x', 'y', 'y', 'x', '?', '?', '?', 'x', '?', '?', '?']).reshape(5, 4)
 
 ## 3x4x5 (Bingo) ##
-threefourfive_a = np.array(['x','y','?','?','x','y','?','?','y','x','y','y','x','y','?','?','?','y','?','?']).reshape(5, 4)
+threefourfive_a = np.array(['x', 'y', '?', '?', 'x', 'y', '?', '?', 'y',
+                            'x', 'y', 'y', 'x', 'y', '?', '?', '?', 'y', '?', '?']).reshape(5, 4)
 
-threefourfive_b = np.array(['x','y','?','?','x','y','?','?','y','x','y','y','x','y','?','?','x','?','?','?']).reshape(5, 4)
+threefourfive_b = np.array(['x', 'y', '?', '?', 'x', 'y', '?', '?', 'y',
+                            'x', 'y', 'y', 'x', 'y', '?', '?', 'x', '?', '?', '?']).reshape(5, 4)
 
 ## 3x5x5 (Bingo) ##
-threefivesquared = np.array(['x','y','?','?','x','y','?','?','y','x','y','y','x','y','?','?','x','y','?','?']).reshape(5, 4)
+threefivesquared = np.array(['x', 'y', '?', '?', 'x', 'y', '?', '?', 'y',
+                             'x', 'y', 'y', 'x', 'y', '?', '?', 'x', 'y', '?', '?']).reshape(5, 4)
 
 ### AxBxCxD (Sea Donkey!), A,B,C,D != 5 ###
 
 ## 3x3x3x3 (Sea Donkey!) ##
-threequad_a = np.array(['x','x','y','x','y','y','?','?','x','y','?','?','?','?','x','y','?','?']).reshape(3, 6)
+threequad_a = np.array(['x', 'x', 'y', 'x', 'y', 'y', '?', '?',
+                        'x', 'y', '?', '?', '?', '?', 'x', 'y', '?', '?']).reshape(3, 6)
 
-threequad_b = np.array(['?','?','x','?','?','?','x','x','y','x','y','y','?','?','x','y','?','?','?','?','?','y','?','?']).reshape(4, 6)
+threequad_b = np.array(['?', '?', 'x', '?', '?', '?', 'x', 'x', 'y', 'x', 'y',
+                        'y', '?', '?', 'x', 'y', '?', '?', '?', '?', '?', 'y', '?', '?']).reshape(4, 6)
 
-threequad_c = np.array(['?','?','x','y','?','?','x','x','y','x','y','y','?','?','x','y','?','?']).reshape(3, 6)
+threequad_c = np.array(['?', '?', 'x', 'y', '?', '?', 'x', 'x',
+                        'y', 'x', 'y', 'y', '?', '?', 'x', 'y', '?', '?']).reshape(3, 6)
 
-threequad_d = np.array(['?','?','x','?','?','?','?','?','x','?','?','?','x','x','y','x','y','y','?','?','?','y','?','?','?','?','?','y','?','?']).reshape(5, 6)
+threequad_d = np.array(['?', '?', 'x', '?', '?', '?', '?', '?', 'x', '?', '?', '?', 'x', 'x',
+                        'y', 'x', 'y', 'y', '?', '?', '?', 'y', '?', '?', '?', '?', '?', 'y', '?', '?']).reshape(5, 6)
 
-twocolor_patterns_best = [threecubed_a, threecubed_b, threequad_a, threequad_b, threequad_c, threequad_d]
+twocolor_patterns_best = [threecubed_a, threecubed_b,
+                          threequad_a, threequad_b, threequad_c, threequad_d]
 
 ## 3x3x3x4 (Sea Donkey!) ##
-threecubefour_a = np.array(['?','?','x','y','?','?','?','?','x','y','?','?','x','x','y','x','y','y','?','?','x','?','?','?']).reshape(4, 6)
+threecubefour_a = np.array(['?', '?', 'x', 'y', '?', '?', '?', '?', 'x', 'y', '?',
+                            '?', 'x', 'x', 'y', 'x', 'y', 'y', '?', '?', 'x', '?', '?', '?']).reshape(4, 6)
 
-threecubefour_b = np.array(['?','?','x','?','?','?','?','?','x','y','?','?','x','x','y','x','y','y','?','?','x','y','?','?']).reshape(4, 6)
+threecubefour_b = np.array(['?', '?', 'x', '?', '?', '?', '?', '?', 'x', 'y', '?',
+                            '?', 'x', 'x', 'y', 'x', 'y', 'y', '?', '?', 'x', 'y', '?', '?']).reshape(4, 6)
 
-threecubefour_c = np.array(['?','?','x','?','?','?','?','?','x','?','?','?','x','x','y','x','y','y','?','?','x','y','?','?','?','?','?','y','?','?']).reshape(5, 6)
+threecubefour_c = np.array(['?', '?', 'x', '?', '?', '?', '?', '?', 'x', '?', '?', '?', 'x', 'x',
+                            'y', 'x', 'y', 'y', '?', '?', 'x', 'y', '?', '?', '?', '?', '?', 'y', '?', '?']).reshape(5, 6)
 
 ## 3x3x4x4 (Sea Donkey!) ##
-threesquarefoursquare_a = np.array(['?','?','x','y','?','?','?','?','x','y','?','?','x','x','y','x','y','y','?','?','x','y','?','?']).reshape(4, 6)
+threesquarefoursquare_a = np.array(['?', '?', 'x', 'y', '?', '?', '?', '?', 'x', 'y',
+                                    '?', '?', 'x', 'x', 'y', 'x', 'y', 'y', '?', '?', 'x', 'y', '?', '?']).reshape(4, 6)
 
-threesquarefoursquare_b = np.array(['?','?','x','?','?','?','?','?','x','y','?','?','x','x','y','x','y','y','?','?','x','y','?','?','?','?','?','y','?','?']).reshape(5, 6)
+threesquarefoursquare_b = np.array(['?', '?', 'x', '?', '?', '?', '?', '?', 'x', 'y', '?', '?', 'x',
+                                    'x', 'y', 'x', 'y', 'y', '?', '?', 'x', 'y', '?', '?', '?', '?', '?', 'y', '?', '?']).reshape(5, 6)
 
 ### AxBxCx5 (Vegas) ###
 
 ## 3x3x3x5 (Vegas) ##
-threecubefive_a = np.array(['?','?','x','y','?','?','?','?','x','y','?','?','x','x','y','x','y','y','?','?','x','?','?','?','?','?','x','?','?','?']).reshape(5, 6)
+threecubefive_a = np.array(['?', '?', 'x', 'y', '?', '?', '?', '?', 'x', 'y', '?', '?', 'x', 'x',
+                            'y', 'x', 'y', 'y', '?', '?', 'x', '?', '?', '?', '?', '?', 'x', '?', '?', '?']).reshape(5, 6)
 
-threecubefive_b = np.array(['?','?','x','?','?','?','?','?','x','y','?','?','x','x','y','x','y','y','?','?','x','y','?','?','?','?','x','?','?','?']).reshape(5, 6)
+threecubefive_b = np.array(['?', '?', 'x', '?', '?', '?', '?', '?', 'x', 'y', '?', '?', 'x', 'x',
+                            'y', 'x', 'y', 'y', '?', '?', 'x', 'y', '?', '?', '?', '?', 'x', '?', '?', '?']).reshape(5, 6)
 
 ## 3x3x4x5 (Vegas) ##
 
-threesquarefourfive = np.array(['?','?','x','y','?','?','?','?','x','y','?','?','x','x','y','x','y','y','?','?','x','y','?','?','?','?','x','?','?','?']).reshape(5, 6)
+threesquarefourfive = np.array(['?', '?', 'x', 'y', '?', '?', '?', '?', 'x', 'y', '?', '?', 'x', 'x',
+                                'y', 'x', 'y', 'y', '?', '?', 'x', 'y', '?', '?', '?', '?', 'x', '?', '?', '?']).reshape(5, 6)
 
 ## 3x3x5x5 (Vegas) ##
 
-threesquarefivesquare = np.array(['?','?','x','y','?','?','?','?','x','y','?','?','x','x','y','x','y','y','?','?','x','y','?','?','?','?','x','y','?','?']).reshape(5, 6)
+threesquarefivesquare = np.array(['?', '?', 'x', 'y', '?', '?', '?', '?', 'x', 'y', '?', '?', 'x',
+                                  'x', 'y', 'x', 'y', 'y', '?', '?', 'x', 'y', '?', '?', '?', '?', 'x', 'y', '?', '?']).reshape(5, 6)
 print("Basic 1 color patterns:")
 for x in onecolor_patterns_basic:
     print(x)
@@ -163,11 +202,13 @@ for x in twocolor_patterns_best:
 
 ##### Functions #####
 
+
 def testing_function_array(array):
     for key in array:
         pyautogui.moveTo(key[0], key[1])
         pyautogui.click()
         time.sleep(1)
+
 
 def testing_function(dict):
     for key in dict:
@@ -189,8 +230,10 @@ def testing_function(dict):
         pyautogui.click()
         time.sleep(2)
 
+
 def handle(title):
     return win32gui.FindWindowEx(0, 0, 0, title)
+
 
 def focus_window(hwnd):
     win32gui.ShowWindow(hwnd, 9)
@@ -200,14 +243,17 @@ def focus_window(hwnd):
     height = rect[3] - rect[1]
     return rect[0], rect[1], width, height
 
-def getclickpositions(matchindex, tuple1 = (0, 0), tuple2 = (0, 0)):
+
+def getclickpositions(matchindex, tuple1=(0, 0), tuple2=(0, 0)):
 
     print(current_game_positions)
-    print(matchindex,tuple1,tuple2)
+    print(matchindex, tuple1, tuple2)
 
     if tuple1[0] == tuple2[0] and (abs(tuple1[1] - tuple2[1]) == 1 or abs(tuple1[1] - tuple2[1]) == 0):
-        x = int((current_game_positions[tuple1[0] + matchindex[0], tuple1[1] + matchindex[1]][0] + current_game_positions[tuple2[0] + matchindex[0], tuple2[1] + matchindex[1]][0])/2)
-        y = current_game_positions[tuple1[0] + matchindex[0]][tuple1[1] + matchindex[1]][1]
+        x = int((current_game_positions[tuple1[0] + matchindex[0], tuple1[1] + matchindex[1]]
+                 [0] + current_game_positions[tuple2[0] + matchindex[0], tuple2[1] + matchindex[1]][0])/2)
+        y = current_game_positions[tuple1[0] +
+                                   matchindex[0]][tuple1[1] + matchindex[1]][1]
         return x, y
     else:
         raise ValueError('Check your tuple1, tuple2 values')
@@ -215,16 +261,26 @@ def getclickpositions(matchindex, tuple1 = (0, 0), tuple2 = (0, 0)):
 
 def piece_positions(xy):
     while True:
-        location_a = pyautogui.locateAllOnScreen('blue_pentagon.png', region=(xy[0] + 92, xy[1] + 72, 270, 540), confidence=0.99)
-        location_b = pyautogui.locateAllOnScreen('darkblue_rectangle.png', region=(xy[0] + 92, xy[1] + 72, 270, 540), confidence=0.99)
-        location_c = pyautogui.locateAllOnScreen('green_square.png', region=(xy[0] + 92, xy[1] + 72, 270, 540), confidence=0.99)
-        location_d = pyautogui.locateAllOnScreen('green_octagon.png', region=(xy[0] + 92, xy[1] + 72, 270, 540), confidence=0.99)
-        location_e = pyautogui.locateAllOnScreen('lightblue_octagon.png', region=(xy[0] + 92, xy[1] + 72, 270, 540), confidence=0.99)
-        location_f = pyautogui.locateAllOnScreen('lightblue_sphere.png', region=(xy[0] + 92, xy[1] + 72, 270, 540), confidence=0.99)
-        location_g = pyautogui.locateAllOnScreen('teal_sphere.png', region=(xy[0] + 92, xy[1] + 72, 270, 540), confidence=0.99)
-        location_m = pyautogui.locateAllOnScreen('crab.png', region=(xy[0] + 92, xy[1] + 72, 270, 540), confidence=0.99)
-        location_j = pyautogui.locateAllOnScreen('jelly.png', region=(xy[0] + 92, xy[1] + 72, 270, 540), confidence=0.99)
-        location_p = pyautogui.locateAllOnScreen('puffer.png', region=(xy[0] + 92, xy[1] + 72, 270, 540), confidence=0.99)
+        location_a = pyautogui.locateAllOnScreen(f'{images_location}blue_pentagon.png', region=(
+            xy[0] + 92, xy[1] + 72, 270, 540), confidence=0.99)
+        location_b = pyautogui.locateAllOnScreen(f'{images_location}darkblue_rectangle.png', region=(
+            xy[0] + 92, xy[1] + 72, 270, 540), confidence=0.99)
+        location_c = pyautogui.locateAllOnScreen(f'{images_location}green_square.png', region=(
+            xy[0] + 92, xy[1] + 72, 270, 540), confidence=0.99)
+        location_d = pyautogui.locateAllOnScreen(f'{images_location}green_octagon.png', region=(
+            xy[0] + 92, xy[1] + 72, 270, 540), confidence=0.99)
+        location_e = pyautogui.locateAllOnScreen(f'{images_location}lightblue_octagon.png', region=(
+            xy[0] + 92, xy[1] + 72, 270, 540), confidence=0.99)
+        location_f = pyautogui.locateAllOnScreen(f'{images_location}lightblue_sphere.png', region=(
+            xy[0] + 92, xy[1] + 72, 270, 540), confidence=0.99)
+        location_g = pyautogui.locateAllOnScreen(f'{images_location}teal_sphere.png', region=(
+            xy[0] + 92, xy[1] + 72, 270, 540), confidence=0.99)
+        location_m = pyautogui.locateAllOnScreen(f'{images_location}crab.png', region=(
+            xy[0] + 92, xy[1] + 72, 270, 540), confidence=0.99)
+        location_j = pyautogui.locateAllOnScreen(f'{images_location}jelly.png', region=(
+            xy[0] + 92, xy[1] + 72, 270, 540), confidence=0.99)
+        location_p = pyautogui.locateAllOnScreen(f'{images_location}puffer.png', region=(
+            xy[0] + 92, xy[1] + 72, 270, 540), confidence=0.99)
 
         dict_init = {}
 
@@ -253,6 +309,7 @@ def piece_positions(xy):
             break
 
     return dict_init
+
 
 def readboardandsave(dict_init):
     positions = list(dict_init.keys())
@@ -354,10 +411,11 @@ def readboardandsave(dict_init):
 
     return np.array(list(final_dict.values())).reshape(12, 6)
 
+
 def pattern_variations(matrix):
     variation_matrix = []
 
-    #teha deepcopy
+    # teha deepcopy
 
     variation_matrix.append(matrix)
 
@@ -371,17 +429,19 @@ def pattern_variations(matrix):
     for variation in variation_matrix:
         yield variation
 
-def piece_permutations(): # Generator object, must be iterated
+
+def piece_permutations():  # Generator object, must be iterated
     pieces = 'abcdefg'
     return permutations(pieces, 2)
+
 
 def piece_type_combinations(matrix):
     pieces = 'abcdefg'
 
     temp_matrix = matrix.copy()
 
-    #if temp_matrix == 1 color shit .. then use abcdefg..
-    #if temp_matrix == 2 color... then use permutations
+    # if temp_matrix == 1 color shit .. then use abcdefg..
+    # if temp_matrix == 2 color... then use permutations
 
     i = 0
 
@@ -408,12 +468,14 @@ def piece_type_combinations(matrix):
             i = 0
             yield temp_matrix
 
+
 def generate2dmatrix_char(m, n, string):
     a = np.empty(m*n, dtype='str').reshape(m, n)
     for i in range(m):
         for j in range(n):
             a[i][j] = random.choice(string)
     return a
+
 
 def comparearrays_eq(b, a):
     if len(a) == len(b):
@@ -427,8 +489,10 @@ def comparearrays_eq(b, a):
     else:
         raise IndexError
 
+
 def possiblearrangements(submatrix, matrix):
     return (sizeofmatrix(matrix)[1] - (sizeofmatrix(submatrix)[1] - 1)) * (sizeofmatrix(matrix)[0] - (sizeofmatrix(submatrix)[0] - 1))
+
 
 def sizeofmatrix(matrix):
     if matrix.ndim >= 2:
@@ -437,6 +501,7 @@ def sizeofmatrix(matrix):
         return matrix.shape[0], 1
     else:
         return 0
+
 
 def issubmatrixnormal(submatrix, matrix):
     if submatrix.ndim != 0 and matrix.ndim != 0:
@@ -449,6 +514,7 @@ def issubmatrixnormal(submatrix, matrix):
             return False
     else:
         return False
+
 
 def findsubmatrix(submatrix, matrix):
     if issubmatrixnormal(submatrix, matrix):
@@ -512,6 +578,7 @@ def findsubmatrix(submatrix, matrix):
         return matchindexes[:k]
     else:
         return None
+
 
 #'testboard.png - Paint'
 HWND = handle('Puzzle Pirates - Vanhalgen on the Emerald ocean')
